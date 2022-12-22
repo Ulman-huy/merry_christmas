@@ -1,0 +1,115 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: url(../image/bg.jpg);
+    background-size: cover;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* position: relative; */
+}
+.sky {
+    cursor: url(../image/SANTA.png), pointer;
+    height: 30%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.santa {
+    cursor: url(../image/SANTA.png), pointer;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+.earth {
+    cursor: url(../image/snowman.png), pointer;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+span {
+    position: absolute;
+    pointer-events: none;
+    filter: drop-shadow(0 0 15px rgba(0,0,0, 0.5));
+    animation: fade 1s linear infinite;
+}
+
+@keyframes fade {
+    0%, 100% {
+        opacity: 0;
+    }
+    20%, 80% {
+        opacity: 1;
+    }
+}
+span::before {
+    content: '';
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    background: url(../image/snow.png);
+    background-size: cover;
+    animation: moveShape 1s linear infinite;
+}
+@keyframes moveShape {
+    0% {
+        transform: translate(0) rotate(0deg);
+    }
+    100% {
+        transform: translate(300px) rotate(360deg);
+    }
+}
+img {
+    position: absolute;
+    animation: dropDown 5s linear ;
+    animation-fill-mode: forwards;
+    z-index: 999;
+    cursor: pointer;
+}
+img:hover {
+    cursor: url(../image/cane.png), pointer;
+}
+@keyframes dropDown {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(300px);
+    }
+}
+h1 {
+    background: linear-gradient(
+    to right, #f32170, #ff6a06,
+     #cf23cf, #efda21);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-size: 20px;
+    text-align: center;
+    text-shadow: 0 0 50px #efda21,  0 0 70px #ffffff;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+}
+.snow {
+    position: absolute;
+    place-items: center;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../image/1.png), url(../image/2.png), url(../image/3.png);
+    animation: snowFall 20s linear infinite;
+}
+@keyframes snowFall {
+    0% {
+        background-position: 0 0, 0 0, 0 0;
+    }
+    100% {
+        background-position: 500px 1000px, 400px 400px, 300px 300px;
+    } 
+ } 
