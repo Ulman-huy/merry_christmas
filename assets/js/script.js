@@ -1,5 +1,9 @@
 const body = document.querySelector('body')
 const snowContainer = document.querySelector('.snow')
+const desc = document.querySelector('.desc')
+const audio = document.querySelector('.audio')
+const button = document.querySelector('.button')
+const noel = document.querySelector('.noel')
 
 document.addEventListener('mousemove', function(e) {
     let snow = document.createElement('span')
@@ -27,6 +31,10 @@ document.addEventListener('mousemove', function(e) {
 const sky = document.querySelector('.sky')
 
 sky.addEventListener('click', function(e) {
+    if(desc) {
+        desc.remove()
+        audio.play()
+    }
     let gift = document.createElement('img')
     const gifts = ['./assets/image/gift1.png', './assets/image/gift2.png', './assets/image/gift3.png', './assets/image/gift4.png','./assets/image/gift5.png', './assets/image/gift6.png']
 
@@ -63,6 +71,7 @@ setInterval(()=>{
     gifts.forEach(gift => 
         gift.onclick = () => {
             gift.remove()
+            console.log(desc);
             const wish =  document.createElement('h1')
 
             wish.innerHTML = wishs[Math.floor(Math.random() * wishs.length)]
@@ -73,6 +82,10 @@ setInterval(()=>{
                 wish.remove()
             }, 5000)
         }
-        
     )
 }, 5000)
+button.onclick = () => {
+    noel.classList.add('hide')
+    sky.classList.remove('hide')
+    desc.classList.remove('hide')
+}

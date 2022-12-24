@@ -1,3 +1,8 @@
+:root {
+    --url: url(../image/bg.jpg);
+    --url-m: url(../image/bg.jpg);
+}
+
 *, *::after, *::before {
     box-sizing: border-box;
 }
@@ -5,12 +10,11 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    background: url(../image/bg.jpg);
+    background: var(--url);
     background-size: cover;
     overflow: hidden;
     background-repeat: no-repeat;
     background-position: center center;
-    /* position: relative; */
 }
 .sky {
     cursor: url(../image/SANTA.png), pointer;
@@ -19,21 +23,6 @@ body {
     top: 0;
     width: 100%;
     z-index: 1000;
-}
-.santa {
-    cursor: url(../image/SANTA.png), pointer;
-    height: 50%;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 100;
-}
-.earth {
-    cursor: url(../image/snowman.png), pointer;
-    height: 50%;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
 }
 span {
     position: absolute;
@@ -97,6 +86,7 @@ h1 {
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
 }
 .snow {
+    cursor: url(../image/SANTA.png), pointer;
     position: absolute;
     place-items: center;
     top: 0;
@@ -104,6 +94,7 @@ h1 {
     height: 100%;
     background-image: url(../image/1.png), url(../image/2.png), url(../image/3.png);
     animation: snowFall 20s linear infinite;
+    
 }
 @keyframes snowFall {
     0% {
@@ -113,3 +104,96 @@ h1 {
         background-position: 500px 1000px, 400px 400px, 300px 300px;
     } 
  } 
+.desc {
+    background-color: rgb(239, 190, 125);
+    height: 35%;
+    width: 100%;
+    opacity: 0.5;
+    border: 3px solid #fff;
+    border-radius: 20px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    z-index: 10000;
+}
+.desc.hide {
+    display: none;
+}
+.noel.hide {
+    display: none;
+}
+.border{
+	padding: 5px;
+		background: linear-gradient(110deg, #ffeead 33%, rgba(0, 0, 0, 0) 33%), linear-gradient(110deg, #C5E7D7 34%, #88d8b0 34%);
+	background-size: 400% 400%;
+	height: 400px;
+	background-position: 25% 50%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 5s ease infinite;
+}
+.inner-cutout{
+	padding: 10px 0;
+	display: block;
+	background-color:#ff6f69;/*#ff6f69*/
+		
+	margin: 2%;
+	padding-bottom: 40px;
+	height: 300px;
+	background: radial-gradient(#ff6f69, #ff8b87);
+	 background-size: 300%;
+	background-position:50% 50%;
+
+}
+.knockout {
+	
+	vertical-align: middle;
+	text-align: center;
+	font-family: 'Pacifico', cursive;
+	font-size:50pt;
+	color: blue;
+	color: #fff;
+	background: linear-gradient(110deg, #ffeead 33%, rgba(0, 0, 0, 0) 33%), linear-gradient(110deg, #C5E7D7 34%, #88d8b0 34%);
+	background-size: 400%;
+	 -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+.knockout{
+		animation: Gradient 5s ease infinite;
+		-webkit-animation: Gradient 15s ease infinite;
+		-moz-animation: Gradient 5s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 30% 50%
+	}
+	50% {
+		background-position: 25% 50%
+	}
+	100% {
+		background-position: 30% 50%
+	}
+	
+}
+.main{
+	width: 500px;
+	height: 800px;
+	margin-left: 30%;
+	margin-right:40%;
+	margin-top: 10%;
+}
+.button {
+    border: 3px solid #fff;
+    border-radius: 30px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 700;
+    padding: 12px;
+}
+.button:hover {
+    background-color: #fff;
+    color: #ffeead;
+}
